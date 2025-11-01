@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
 @import "tailwindcss";
 @plugin "daisyui" {
   themes: light --default;
@@ -7,4 +9,24 @@
   default: true;
   --color-primary: blue;
   --color-secondary: teal;
+}
+
+*{
+  font-family: "Inter", sans-serif;
+}
+
+.custom-linear-bg{
+  @apply bg-linear-to-br from-[#632EE3] to-[#9F62F2]
+}
+
+.custom-linear-text{
+  @apply bg-linear-to-br from-[#632EE3] to-[#9F62F2] text-transparent bg-clip-text
+}
+
+.custom-linear-button{
+  @apply bg-linear-to-br from-[#632EE3] to-[#9F62F2] text-white border-none cursor-pointer
+}
+
+.navbar a.active{
+  @apply bg-linear-to-br from-[#632EE3] to-[#9F62F2] text-transparent bg-clip-text
 }
