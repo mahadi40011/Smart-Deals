@@ -7,15 +7,27 @@ import { AuthContext } from "../../context/AuthContext";
 const Navbar = () => {
   const { user } = useContext(AuthContext);
 
-  const navLink = <>
-  <li className="font-bold"><NavLink to="/">Home</NavLink></li>
-  <li className="font-bold"><NavLink to="/#">All Products</NavLink></li>
-  <li className="font-bold"><NavLink to="/#">My Products</NavLink></li>
-  <li className="font-bold"><NavLink to="/#">My Bids</NavLink></li>
-  <li className="font-bold"><NavLink to="/#">Create Product</NavLink></li>
-  </>
+  const navLink = (
+    <>
+      <li className="font-bold">
+        <NavLink to="/">Home</NavLink>
+      </li>
+      <li className="font-bold">
+        <NavLink to="/#">All Products</NavLink>
+      </li>
+      <li className="font-bold">
+        <NavLink to="/#">My Products</NavLink>
+      </li>
+      <li className="font-bold">
+        <NavLink to="/#">My Bids</NavLink>
+      </li>
+      <li className="font-bold">
+        <NavLink to="/#">Create Product</NavLink>
+      </li>
+    </>
+  );
   return (
-    <div className="w-full bg-base-100 shadow-sm">
+    <div className="w-full bg-white shadow-sm">
       <ContainerLayout>
         <div className="navbar">
           <div className="navbar-start">
@@ -48,13 +60,16 @@ const Navbar = () => {
               <>
                 <div className="custom-linear-bg  p-0.5 rounded-md">
                   <button className=" py-1.5 px-4 rounded-sm bg-white cursor-pointer">
-                    <Link className="custom-linear-text" to="/login">
+                    <Link
+                      className="custom-linear-text"
+                      to="/authentication/login"
+                    >
                       Login
                     </Link>
                   </button>
                 </div>
                 <button className="py-2 px-4 rounded-sm ml-3 custom-linear-button">
-                  <Link to="/register">Register</Link>
+                  <Link to="/authentication/register">Register</Link>
                 </button>
               </>
             )}
