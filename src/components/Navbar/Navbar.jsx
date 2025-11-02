@@ -5,7 +5,15 @@ import { Menu } from "lucide-react";
 import { AuthContext } from "../../context/AuthContext";
 
 const Navbar = () => {
-  const { user } = useContext(AuthContext);
+  const { user, loading, logOutUser } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOutUser()
+      .then()
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   const navLink = (
     <>
@@ -54,24 +62,37 @@ const Navbar = () => {
             <ul className="menu menu-horizontal px-1">{navLink}</ul>
           </div>
           <div className="navbar-end">
-            {user ? (
-              <button>Log Out</button>
+            {loading ? (
+              <p>Loading...</p>
             ) : (
-              <>
-                <div className="custom-linear-bg  p-0.5 rounded-md">
-                  <button className=" py-1.5 px-4 rounded-sm bg-white cursor-pointer">
-                    <Link
-                      className="custom-linear-text"
-                      to="/authentication/login"
+              <div>
+                {user ? (
+                  <div>
+                    <button
+                      onClick={handleLogOut}
+                      className="py-2 px-4 rounded-sm ml-3 font-semibold custom-linear-button"
                     >
-                      Login
-                    </Link>
-                  </button>
-                </div>
-                <button className="py-2 px-4 rounded-sm ml-3 custom-linear-button">
-                  <Link to="/authentication/register">Register</Link>
-                </button>
-              </>
+                      Log Out
+                    </button>
+                  </div>
+                ) : (
+                  <div className="flex">
+                    <div className="custom-linear-bg p-0.5 rounded-md">
+                      <button className=" py-1.5 px-4 rounded-sm bg-white cursor-pointer">
+                        <Link
+                          className="custom-linear-text"
+                          to="/authentication/login"
+                        >
+                          Login
+                        </Link>
+                      </button>
+                    </div>
+                    <button className="py-2 px-4 rounded-sm ml-3 font-semibold custom-linear-button">
+                      <Link to="/authentication/register">Register</Link>
+                    </button>
+                  </div>
+                )}
+              </div>
             )}
           </div>
         </div>
