@@ -1,6 +1,7 @@
 import React from "react";
 import ContainerLayout from "../../layouts/ContainerLayout/ContainerLayout";
 import { Link } from "react-router";
+import CustomBtn from "../Others/CustomBtn";
 
 const Banner = () => {
   return (
@@ -19,13 +20,8 @@ const Banner = () => {
             <button className=" btn-primary">
               <Link to="/">Watch all Products</Link>
             </button>
-            <div className="custom-linear-bg p-0.5 rounded-md">
-              <button className=" py-1.5 px-4 rounded-sm bg-white cursor-pointer">
-                <Link className="custom-linear-text" to="/">
-                  Post a Product
-                </Link>
-              </button>
-            </div>
+            
+            <CustomBtn to='/'>Post a Product</CustomBtn>
           </div>
         </header>
       </ContainerLayout>

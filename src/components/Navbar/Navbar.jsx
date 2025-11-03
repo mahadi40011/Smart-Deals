@@ -3,6 +3,7 @@ import ContainerLayout from "../../layouts/ContainerLayout/ContainerLayout";
 import { Link, NavLink } from "react-router";
 import { Menu } from "lucide-react";
 import { AuthContext } from "../../context/AuthContext";
+import CustomBtn from "../Others/CustomBtn";
 
 const Navbar = () => {
   const { user, loading, logOutUser } = useContext(AuthContext);
@@ -77,16 +78,8 @@ const Navbar = () => {
                   </div>
                 ) : (
                   <div className="flex">
-                    <div className="custom-linear-bg p-0.5 rounded-md">
-                      <button className=" py-1.5 px-4 rounded-sm bg-white cursor-pointer">
-                        <Link
-                          className="custom-linear-text"
-                          to="/authentication/login"
-                        >
-                          Login
-                        </Link>
-                      </button>
-                    </div>
+                    <CustomBtn to={"/authentication/login"}>Login</CustomBtn>
+
                     <button className=" ml-3 btn-primary">
                       <Link to="/authentication/register">Register</Link>
                     </button>
