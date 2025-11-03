@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap");
 
 @import "tailwindcss";
 @plugin "daisyui" {
@@ -9,25 +9,38 @@
   default: true;
   --color-primary: blue;
   --color-secondary: teal;
-  --color-base-100: #E9E9E9;
+  --color-base-100: #e9e9e9;
 }
 
-*{
+* {
   font-family: "Inter", sans-serif;
 }
 
-.custom-linear-bg{
-  @apply bg-linear-to-br from-[#632EE3] to-[#9F62F2]
+.custom-linear-bg {
+  @apply bg-linear-to-br from-[#632EE3] to-[#9F62F2];
 }
 
-.custom-linear-text{
-  @apply bg-linear-to-br from-[#632EE3] to-[#9F62F2] text-transparent bg-clip-text
+.custom-linear-text {
+  @apply bg-linear-to-br from-[#632EE3] to-[#9F62F2] text-transparent bg-clip-text;
 }
 
-.custom-linear-button{
-  @apply bg-linear-to-br from-[#632EE3] to-[#9F62F2] text-white border-none cursor-pointer
+.btn-primary {
+  @apply bg-linear-to-br from-[#632EE3] to-[#9F62F2] text-white border-none cursor-pointer rounded-sm py-2 px-4 font-semibold;
 }
 
-.navbar a.active{
-  @apply bg-linear-to-br from-[#632EE3] to-[#9F62F2] text-transparent bg-clip-text
+.btn-primary:hover {
+  @apply opacity-90;
+}
+
+.navbar a.active {
+  @apply bg-linear-to-br from-[#632EE3] to-[#9F62F2] text-transparent bg-clip-text;
+}
+
+.multi-bg {
+  background-image: url("./assets/banner-bg-left.png"),
+    url("./assets/banner-bg-right.png"),
+    linear-gradient(225.07deg, #FFE6FD, #E0F8F5);
+  background-position:  left center, right center, center;
+  background-size:  15% 120%, 15% 120%, cover;
+  background-repeat: no-repeat;
 }

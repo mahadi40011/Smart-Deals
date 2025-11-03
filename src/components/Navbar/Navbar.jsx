@@ -35,7 +35,7 @@ const Navbar = () => {
     </>
   );
   return (
-    <div className="w-full bg-white shadow-sm">
+    <div className="w-full bg-white shadow-md">
       <ContainerLayout>
         <div className="navbar">
           <div className="navbar-start">
@@ -70,7 +70,7 @@ const Navbar = () => {
                   <div>
                     <button
                       onClick={handleLogOut}
-                      className="py-2 px-4 rounded-sm ml-3 font-semibold custom-linear-button"
+                      className=" ml-3 btn-primary"
                     >
                       Log Out
                     </button>
@@ -87,7 +87,7 @@ const Navbar = () => {
                         </Link>
                       </button>
                     </div>
-                    <button className="py-2 px-4 rounded-sm ml-3 font-semibold custom-linear-button">
+                    <button className=" ml-3 btn-primary">
                       <Link to="/authentication/register">Register</Link>
                     </button>
                   </div>

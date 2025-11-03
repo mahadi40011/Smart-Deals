@@ -103,7 +103,7 @@ const Register = () => {
 
           <button
             type="submit"
-            className="w-full font-semibold custom-linear-button py-2 px-3 rounded-lg"
+            className="w-full btn-primary py-2.5! px-3 rounded-lg!"
           >
             Register
           </button>
@@ -118,7 +118,7 @@ const Register = () => {
         {/* Social Login */}
         <div
           onClick={handleGoogleLogin}
-          className="flex items-center justify-center gap-2 border rounded-lg py-2 hover:bg-gray-100"
+          className="flex items-center cursor-pointer justify-center gap-2 border rounded-lg py-2 hover:bg-gray-100"
         >
           <img
             src="https://www.svgrepo.com/show/355037/google.svg"

@@ -79,7 +79,7 @@ const Login = () => {
 
           <button
             type="submit"
-            className="w-full font-semibold custom-linear-button py-2 px-3 rounded-lg"
+            className="w-full btn-primary py-2.5! px-3 rounded-lg!"
           >
             Login
           </button>
